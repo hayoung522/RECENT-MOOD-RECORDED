@@ -6,13 +6,13 @@
 	<title>RECENT MOOD RECORDED</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Serif+Display:wght@300;400;600&family=Noto+Serif+KR:wght@200;300;400&family=Oranienbaum&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Noto+Sans:wght@200;300;400&family=Noto+Serif+Display:wght@300;400;600&family=Noto+Serif+KR:wght@200;300;400;700&family=Oranienbaum&family=Cutive+Mono&display=swap" rel="stylesheet">
 	<style type="text/css">
+		html{scroll-behavior: smooth;}
 		body{position: absolute;background-image: url("cloud01.png");background-repeat: no-repeat;background-color: #E9EBEA;margin:0;width: 1728px;cursor: url("finger.png"), default;}
-		a{color: white;text-decoration-line: unset;}
-		a:hover{text-decoration-line: underline;}
-		h1{font-family: 'noto serif kr';margin-top: 365px;text-align:center;line-height: 180%;font-size:20px;font-weight: 300;letter-spacing:-5;color: #171717;}
-		.rec{color: #AA182C; text-align: center;font-size: 14px; font-weight: 600; margin-top: 300px;margin-bottom: 300px;}
+		a{color: white;text-decoration-line: unset;transition: all 0.5s;}
+		h1{font-family: 'noto serif kr';margin-top: 365px;text-align:center;line-height: 180%;font-size:28px;font-weight: 200;letter-spacing:-5;color: #171717;}
+		.rec{color: #AA182C; text-align: center;font-size: 14px; font-weight: 300; margin-top: 300px;margin-bottom: 300px;font-family: 'noto sans';}
 		section
 		.gif{margin-top: 500px; margin-bottom: -27px;}
 		.gif img{display: block;width: 100%;margin-top: 350px;}
@@ -23,7 +23,10 @@
 		.playlist p{line-height: 200%;font-weight: 300;font-size: 17px;}
 		.playlist img{width: 627px;height: 417px;margin-top: 10px;margin-bottom: -300px;}
 		.playlist img:hover {transform: scale(1.15)}
+		.playlist a{color: white;text-decoration-line: unset;transition: all 0.5s;background: linear-gradient(to right, rgba(255,255,255,0)50%,#DAC400 50%);background-size: 200%;transition: .35s;}
+		.playlist a:hover{color: #171717;background-position: -100% 0;}
 		div
+		.rec{text-transform: translate(-50%,-50%)}
 		.abt{margin-top:100px;}
 		.abt img{transform: rotate(-90deg);height: 260px;width: 391px;}
 		.abt img:hover {transform: rotate(-97deg);}
@@ -37,56 +40,72 @@
 		.helloyou img,.shohoku img,.teamo img{margin-left: -105px;}
 		.helloyou p,.shohoku p,.teamo p {margin-left: 200px;margin-top: -260px;}
 		.play{height: 1262px;}
+		.gif{width: 100%;vertical-align: middle;}
+		.text{text-align: center; position: absolute;top: 51%;left: 50%;transform: translate( -50%, -50% );color: #DAC400;font-size: 25px; font-weight: 400;font-family: 'noto sans' ;text-shadow: 1.5px 1.5px black; line-height: 70%}
 		.you h2{line-height: 1000px}
 		.you h3{margin-top: -500px}
 		.ysidea,.ysideb,.ssidea,.ssideb,.bsidea,.bsideb{display: inline-block;padding: 50px;}
+		.top{margin: 0;margin-bottom: 0}
+		.top img{position: fixed; width: 50px;height: 50px; bottom: 30px; right: 30px;opacity: 60%}
+		.social-links{display: flex;}
+		.social-links ul{padding: 10px; display: flex;width: 300px;height: 30px;margin: auto;}
+		.social-items{list-style: none;}
+		.social-items img{width: 50px; height: 50px;padding-top: 20px;filter: grayscale(100%);}
+		.social-items img:hover{filter: grayscale(0%);}
+		.social-items a{padding: 20px; margin-left:8px;font-size: 30px;}
+		span{text-transform: uppercase;animation: blink 1.2s linear infinite;}
+		@keyframes blink{0%{opacity: 0;} 50%{opacity: .5} 100%{opacity: 1;}}
 		h4{font-weight: 400;font-size: 28px;}
-		footer{font-family:Noto Serif;height: 200px; background-color: #171717;}
-		footer p{text-align: center;font-size: 8px; font-weight: 100;color: #E9EBEA;opacity: 50%;margin-bottom: 55px;}	
+		footer{height: 400px; background-color: #171717;text-align: center;justify-content: center; color: #E9EBEA; padding-top: 200px;}
+		footer h2{display: flex; justify-content: center; align-items: center; font-size: 25px;margin-top: 20px;font-family:'Cutive Mono';}
+		footer p{opacity:60%;color: #DAC400;white-space: nowrap; animation: typing 5s steps(27)infinite;overflow: hidden;}
+		@keyframes typing{from{width: 0;}to{width: 480px}}
+		footer h3{font-size: 8px; opacity: 40%;margin-top: 160px;font-family: 'Noto Serif';}
+		strong{font-weight: 700;color: #AA182C;}
 	</style>
 </head>
 
 <body>
-	<header><center>
+	<header id="head"><center>
 		<img src="ttl.png">
 	</header></center>
 	<section class="intro"><center>
-		<h1>작년 12월, 종강과 동시 ‘모든 것이 재미있는 시기’가 찾아왔다. 친구들과 놀고, 새로운 사람을 만나고,<br>이곳 저곳을 돌아다니던 중 영화 한 편을 추천 받게 되었다. 에브리씽 에브리웨어 올앳원스. 나의 삶을 바꿔놓았다 하기에는 과장일테지만<br>이 영화는 내가 놓치고 있던 감정들, 스치며 했던 생각들, 실행하지 못한 행동들을 돌아보게 했다. 그리고 가장 직접적인 영향이라면....<br>‘콘텐츠'의 갈증에 박차를 가하도록 했다. 평소에도 영화, 드라마, 책 등등 가리지않고 봐왔었지만 더욱 적극적으로 콘텐츠를 찾아 나섰다.<br>궁금한 영화가 생기면 바로 예매하고, 밀렸던 OTT  속 작품들을 정주행하고, 그동안 보지 않던 애니나 만화도 보기 시작했다.<br>그러면서 몇몇 작품들이 내 일상에 스며들게 되었다. 문득 생각나는 장면들에 멍해지기도 하고, 음악을 들을 때도 작품들을 떠올리며 듣곤한다.<br><br>
-		최근 내 삶의 일부를 문득 점령했던 작품 몇가지를 소개한다.<br>각 작품의 무드와 나의 감상을 담은 플레이리스트를 녹음해봤다. 함께 감상해보자.
+		<h1>우리는 수많은 영화, 드라마, 만화, 도서를 감상하며 살아간다.<br>그 중 평소 놓쳤던 <strong>감정</strong>과 스쳤던 <strong>생각</strong>을 돌아보도록 하는 작품들은 우리의 <strong>일상에 스며든다.</strong><br>문득 떠오르는 장면들에 멍해지기도 하고, <strong>음악</strong>을 들을 때에도 작품을 떠올리며 듣게된다.<br><br>최근 내 삶의 일부를 문득 점령했던 작품 몇가지를 소개한다.<br>각 작품의 무드와 나만의 감상이 담긴 <strong>플레이리스트</strong>를 <strong>함께 감상해보자.</strong>
 		</h1></center>
 	</section>
-	<div class="rec"><center><h2>REC<br>●</h2></center></div>
+	<div class="rec"><span><center><h2>REC<br>●</h2></center></span></div>
 	<section class="about"><div class="abt">
 		<div class="helloyou">
 			<h2>Hello, you.</h2>
 			<h3>You Playlist</h3>
-			<img src="cassete0you.png">
+			<a href="#you"><img src="cassete0you.png"></a>
 			<p>사랑 받아본 적 없는 사람이
-			<br>사랑할 수 있을까? 넷플릭스<br>너의 모든 것은 1인칭 주인공<br>시점으로 전개 된다. 살인마<br>혹은 스토커로 볼 수도 있는<br>그는 늘 사랑과 평화를 갈망<br>하며 살아간다. 그의 범죄는<br>용서될 수 없겠지만 시즌이<br>지나며 시간이 흘러갈수록<br>나도 그의 삶이 행복해지길<br>응원하게 된다.</p>
+			<br><b>사랑할 수 있을까?</b>  넷플릭스<br>너의 모든 것은 1인칭 주인공<br>시점으로 전개 된다. 살인마<br>혹은 스토커로 볼 수도 있는<br>그는 늘 <b>사랑과 평화를 갈망</b><br>하며 살아간다. 그의 범죄는<br>용서될 수 없겠지만 시즌이<br>지나며 시간이 흘러갈수록<br>나도 그의 삶이 <b>행복해지길<br>응원하게 된다.</b></p>
 		</div>
 		<div class="shohoku">
 			<h2>SHOHOKU</h2>
 			<h3>Slamdunk Playlist</h3>
-			<img src="cassete0shohoku.png">
-			<p>첫사랑. 누군가는 이렇게<br>표현하였다. 슬램덩크는<br>순수하고 본질적인 인간의<br>감정을 일깨웠다. 열정, 꿈,<br>우정, 사랑. 흔한 소재들로<br>가득하지만 넘치는 작품들<br>속에서 유일하게 우리의<br>심장을 뛰게 했다. 90년대<br>부터 시작된 이 만화 속의<br>인물들은 아직도 코트 위에<br>살아 숨쉬고 있다.</p>
+			<a href="#slamdunk"><img src="cassete0shohoku.png"></a>
+			<p><b>첫사랑.</b> 누군가는 이렇게<br>표현하였다. 슬램덩크는<br><b>순수하고 본질적</b>인 인간의<br>감정을 일깨웠다. 열정, 꿈,<br>우정, 사랑. 흔한 소재들로<br>가득하지만 넘치는 작품들<br>속에서 유일하게 우리의<br>심장을 뛰게 했다. 90년대<br>부터 시작된 이 만화 속의<br>인물들은 <b>아직도 코트 위에<br>살아 숨쉬고 있다.</b></p>
 		</div>
 		<div class="teamo">
 			<h2>Te'amo, Te'amo, Te'amo</h2>
 			<h3>Babylon Playlist</h3>
-			<img src="cassete0babylon.png">
-			<p>영화의 모든 것을 담은 영화,<br>바빌론은 영화인들의 짦은<br>생명력과 영화의 영원함에<br>대해 이야기한다. 이 영화는<br>모순으로 가득하지만 동시에<br>아름다웠다. 긴 타임라인을<br>따라 화려함과 역겨움을 한<br>번에 담아낸 이 영화 속에서<br>사람과 사람, 사람과 영화 간<br>순수한 사랑이 지저분함과<br>추잡스러움 사이 빛났다.</p>
+			<a href="#babylon"><img src="cassete0babylon.png"></a>
+			<p><b>영화의 모든 것</b>을 담은 영화,<br>바빌론은 영화인들의 짦은<br>생명력과 <b>영화의 영원함</b>에<br>대해 이야기한다. 이 영화는<br>모순으로 가득하지만 동시에<br><b>아름다웠다.</b> 긴 타임라인을<br>따라 화려함과 역겨움을 한<br>번에 담아낸 이 영화 속에서<br>사람과 사람, 사람과 영화 간<br>순수한 사랑이 지저분함과<br>추잡스러움 사이 <b>빛났다.</b></p>
 		</div></div>
 	</section>
 
 
 	<section class="gif"><center>
-		<img src="play.gif">
+		<div class="gif"><img src="play.gif"></div>
+		<div class="text"><p><em>click the song title to listen.</em></p><br>▼</div>
 	</section></center>
 
 
 	<section class="playlist">
 
-		<div class="you">
+		<div id="you" class="you">
 		<center><h2>Hello, You.</h2><h3>You Playlist</h3><img src="cassete0you.png"></center>
 			<center><div class="ysidea">
 			<h4>side A</h4>
@@ -98,7 +117,7 @@
 			</div></center>
 		</div>
 
-		<div class="slamdunk">
+		<div id="slamdunk" class="slamdunk">
 		<center><h2>SHOHOKU</h2><h3>Slamdunk Playlist</h3><img src="cassete0shohoku.png"></center>
 			<center><div class="ssidea">
 			<h4>side A</h4>
@@ -110,7 +129,7 @@
 			</div></center>
 		</div>
 
-		<div class="babylon">
+		<div id="babylon" class="babylon">
 		<center><h2>Te’ amo, Te’ amo, Te’ amo</h2><h3>Babylon Playlist</h3><img src="cassete0babylon.png"></center>
 			<center><div class="bsidea">
 			<h4>side A</h4>
@@ -122,6 +141,17 @@
 			</div></center>
 		</div>
 	</section>
-	<footer><p><br><br><br><br><br><br><br>Copyright 2023 Yoon Ha Young All Rights Reserved<br>instagram @haaaa0ee</p></footer>
+	<footer>
+		<h2><p>' Thank you for visiting. '</p></h2>
+		<div class="social-links">
+			<ul>
+				<li class="social-items"><a href="https://www.instagram.com/haaaa0ee/" target="_new"><img src="instaicon.png"></a></li>
+				<li class="social-items"><a href="https://www.behance.net/haaaa0ee" target="_new"><img src="behanceicon.png"></a></li>
+				<li class="social-items"><a href="https://www.youtube.com/channel/UCcoIajUMJ8VRTQ6XueHYVlQ" target="_new"><img src="youtubeicon.png"></a></li>
+			</ul>
+		</div>
+		<h3>Copyright 2023 Yoon Hayoung All Rights Reserved</h3>
+	</footer>
+	<div class="top"><a href="#head"><img src="toparrow.png"></a></div>
 </body>
 </html>
